@@ -1,0 +1,18 @@
+<div ng-controller="ChartCtrl">
+    Select Date:
+    <input type="date"
+           ng-model="date.value"
+           ng-change=validateDate()>
+    </input>
+    <button ng-click=getChartData()
+            ng-disabled="!date.value || dateError">
+        Get Data
+    </button>
+    <button ng-click=clearChart()>
+        Clear
+    </button>
+    <div>
+        Total Sales($): {{totalSales}}
+    </div>
+    <label ng-show="dateError" class="error">Invalid date, enter date in last 5 days</label>
+</div>
